@@ -5,7 +5,7 @@ Reviewing production data with RStudio, finding insights that might help the Aut
 
 ![MechaCarChallenge](https://user-images.githubusercontent.com/106599446/189537810-def15468-0f57-4468-88fd-734320d17a50.png)
 
-The multiple linear regression model found that vehicle_length and ground clearance are statistically unlikely to provide random amounts of variance to the linear model, meaning that these metrics do indeed have a significant impact on the mpg of a car.
+The multiple linear regression model (the results of which can be seen above) found that vehicle_length and ground clearance are statistically unlikely to provide random amounts of variance to the linear model, meaning that these metrics do indeed have a significant impact on the mpg of a car.
 
 The linear regression model performed quite well, with an r-squared value of .71 and a significant p-value.
 
@@ -32,15 +32,30 @@ What's most notable in the breakdown of each lot is that the Variance and SD of 
 
 ![Total_T_Test](https://user-images.githubusercontent.com/106599446/189537857-c900876e-d84a-4f88-b07c-1b9e24ac909e.png)
 
+The p-value is above 5% which means that we cannot reject the null hypothesis, in other words, the two means are statistically similar. 
+
 ![Lot1_T_Test](https://user-images.githubusercontent.com/106599446/189537861-184b5acb-91bc-4942-a244-608e115e1652.png)
+
+The p-value for this test was 1, as the mean for this subset is exactly 1500.
 
 ![Lot2_T_Test](https://user-images.githubusercontent.com/106599446/189537866-e5c739c1-f709-4ee9-a8f9-e853d90d8761.png)
 
+The p-value for this test was .6, which again means that we cannot reject the null hypothesis, as the two means are statistically similar. 
+
 ![Lot3_T_Test](https://user-images.githubusercontent.com/106599446/189537870-bad234fb-02d8-4926-a0e0-b23b3e2df06b.png)
+
+The p-value for this test was below .05%, which means that we can reject the null hypothesis, as the two means here are NOT statistically similar
+
+The results of all these test are in line with what we found in summary statistics, namely that the data for Lot3 was quite different than the rest of the data.
 
 ## Study Design: MechaCar vs Competition
 
-What metric or metrics are you going to test?
-What is the null hypothesis or alternative hypothesis?
-What statistical test would you use to test the hypothesis? And why?
-What data is needed to run the statistical test?
+As the EV market continues to grow, I suggest running an analysis on the overall cost and maitnence costs between MechaCar models and that of an EV company. 
+
+The null hypothsesis for this analysis is that: A.) the cost of EV models are not different than MechaCar models. and B.) the maitnence costs are comparable for both types of cars.
+
+The alternative hypothesis is: A.) that the cost of EV models are more expensive than MechaCar models. and B.) the maitnence costs are lower for EV models than MechaCars. 
+
+I would recommend running a T.Test on the respective datasets for maitnence costs and total costs, as this would let us determine whether or not there were differences in these datasets. 
+
+We would need the total cost and maitnence costs for a compeditors EV models as well as that of the MechaCar models. 
